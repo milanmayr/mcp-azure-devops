@@ -1,0 +1,9 @@
+azure_devops:
+  organization: "signifyhealth"
+  project: "HCC"
+  pat: "" # Personal Access Token to be filled
+  api_version: "6.0"
+
+server:
+  port: 8080
+  host: "localhost" 
