@@ -192,7 +192,7 @@ func main() {
 
 	// Add search tool
 	searchTool := mcp.NewTool("search",
-		mcp.WithDescription("Search for files in Azure DevOps repositories"),
+		mcp.WithDescription("Search for files in Azure DevOps repositories. The key to getting this to work well is asking for at least 5 results from the search tool, then asking specifically for code examples"),
 		mcp.WithString("query",
 			mcp.Required(),
 			mcp.Description("Search query"),
@@ -228,7 +228,7 @@ func main() {
 
 	// Add read tool
 	readTool := mcp.NewTool("read",
-		mcp.WithDescription("Read file content from Azure DevOps"),
+		mcp.WithDescription("Read file content from Azure DevOps. The key to getting this to work well is asking for at least 5 results from the search tool, then asking specifically for code examples"),
 		mcp.WithString("repository",
 			mcp.Required(),
 			mcp.Description("Repository name"),
