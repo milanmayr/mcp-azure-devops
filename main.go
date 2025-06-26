@@ -52,14 +52,14 @@ func NewAzureDevOpsClient() (*AzureDevOpsClient, error) {
 		return nil, fmt.Errorf("error unmarshaling config: %w", err)
 	}
 
-	// Allow PAT override from environment variable
-	if pat := os.Getenv("AZURE_DEVOPS_PAT"); pat != "" {
-		config.AzureDevOps.PAT = pat
-	}
-
+	// Check if PAT is empty and try to get it from environment variable
 	if config.AzureDevOps.PAT == "" {
-		log.Print("Azure DevOps PAT is required")
-		return nil, fmt.Errorf("Azure DevOps PAT is required")
+		if pat := os.Getenv("AZURE_DEVOPS_PAT"); pat != "" {
+			config.AzureDevOps.PAT = pat
+		} else {
+			log.Print("Azure DevOps PAT is required")
+			return nil, fmt.Errorf("Azure DevOps PAT is required")
+		}
 	}
 
 	// Create Azure DevOps connection
