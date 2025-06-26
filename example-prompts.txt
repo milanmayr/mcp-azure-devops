@@ -1,1 +1,3 @@
-Using the azure-devops MCP server, can you tell me how to create a Kafka RBAC using Terraform?
+- Using the azure-devops MCP server, can you tell me how to create a Kafka RBAC using Terraform?
+
+- use the sgfy-codebase mcp server 'search' and 'read' tools to find at least 10 kafka rbac terraform implementations and recommend an approach to implement kafka rbac using terraform. give me some code examples
